@@ -1,0 +1,11 @@
+{
+    "Recipients": [
+        "+6598219019"
+
+    ],
+    "From":"EC-OUN",
+    "OriginSystem": "EC",
+    "Message": "Hi {{.Name}}, your order {{.OrderID}} has been processed and is expected to be at {{.DeliverTime}} at {{.DeliverAddr}} Track:{{.TrackingURL}}",
+    "MessageType": "oun/sms",
+    "CreateBy": "User1"
+}

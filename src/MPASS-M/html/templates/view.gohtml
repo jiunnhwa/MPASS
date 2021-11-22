@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>myLog | Log History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="max-age=300">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">    
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+    
+    
+    
+    
+    <style type="text/css">
+ 
+.flexbox {
+  display: flex;
+  width: 100%;
+ margin: 2px 2px 2px 2px;
+}
+
+.spacer2 {
+  flex-grow: 0.07;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+    </style>
+
+
+
+<style type="text/css">
+a{
+    color: #739931;
+  }
+  .page{
+    max-width: 100em;
+    margin: 0 auto;
+  }
+
+  tbody tr:nth-child(even) {
+   background-color: seashell;
+}
+  table th,
+  table td{
+    text-align: left;
+  }
+  table.layout{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table.display{
+    margin: 1em 0;
+  }
+  table.display th,
+  table.display td{
+    border: 1px solid #B3BFAA;
+    padding: .5em 1em;
+  }
+  
+  table.display th{ background: gainsboro; }
+  /*table.display td{ background: #fff; }*/
+  
+  table.responsive-table{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 30em){
+      table.responsive-table{
+        box-shadow: none;  
+      }
+      table.responsive-table thead{
+        display: none; 
+      }
+    table.display th,
+    table.display td{
+      padding: .5em;
+    }
+      
+    table.responsive-table td:nth-child(1):before{
+      content: 'RID';
+    }
+    table.responsive-table td:nth-child(2):before{
+      content: 'Providers';
+    }
+    table.responsive-table td:nth-child(3):before{
+      content: 'From';
+    }
+    table.responsive-table td:nth-child(4):before{
+      content: 'To';
+    }        
+    table.responsive-table td:nth-child(5):before{
+      content: 'SendTime';
+    }            
+    table.responsive-table td:nth-child(1),
+    table.responsive-table td:nth-child(2),
+    table.responsive-table td:nth-child(3),
+    table.responsive-table td:nth-child(4)
+    table.responsive-table td:nth-child(5){
+      padding-left: 25%;
+    }
+    table.responsive-table td:nth-child(1):before,
+    table.responsive-table td:nth-child(2):before,
+    table.responsive-table td:nth-child(3):before,
+    table.responsive-table td:nth-child(4):before
+    table.responsive-table td:nth-child(5):before{
+      position: absolute;
+      left: .5em;
+      font-weight: bold;
+    }
+    
+
+      table.responsive-table tr,
+      table.responsive-table td{
+          display: block;
+      }
+      table.responsive-table tr{
+          position: relative;
+          margin-bottom: 1em;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+      }
+      table.responsive-table td{
+          border-top: none;
+      }
+      table.responsive-table td.organisationnumber{
+          background: #D5E0CC;
+          border-top: 1px solid #B3BFAA;
+      }
+      table.responsive-table td.actions{
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: none;
+          background: none;
+      }
+  }
+
+</style>
+
+
+	
+</head>
+<body>
+
+
+
+
+    <div class="container-fluid">
+
+
+
+
+    
+    
+	<h3 style="color:Black;">Daily Done Report for {{.ReportDate}}</h3>
+    <div class="container-fluid p-3 my-3" >
+
+        <h6><span class="badge bg-dark">Records: {{.RowCount}}</span></h6>
+
+           <table id="myTable" class="layout display responsive-table">
+               <thead>
+                   <tr >
+                       <th><span style="font-weight:bold">       RID</span></th>
+                       <th><span style="font-weight:bold">       Providers</span></th>
+                       <th><span style="font-weight:bold">       From</span></th>
+                       <th><span style="font-weight:bold">       To</span></th>
+                       <th><span style="font-weight:bold">       SendTime</span></th>
+                                         
+                   </tr>
+               </thead>
+               <tbody>
+
+
+{{range .Records }}
+                <!-- Row Start -->
+                <tr>
+                <td>
+                {{.RID}}
+                </td>
+                <td>
+                {{.Providers}}
+                </td>                
+                <td>
+                {{.From}}
+                </td>  
+                <td>
+                {{.To}}
+                </td>                  
+                <td>
+                {{.SendTime.Time}}
+                </td>                  
+         
+                </tr>
+                <!-- Row End -->
+            {{end}}
+
+               </tbody>
+    
+           </table>
+           </div>
+
+
+
+		
+<br><br>		
+    </div>
+														
+   </div>
+
+
+
+    
+
+
+
+
+    <script type="text/javascript">
+        const searchButton = document.getElementById('search-button');
+        const searchInput = document.getElementById('search-input');
+        searchButton.addEventListener('click', () => {
+            const inputValue = searchInput.value;
+            alert(inputValue);
+        });
+
+
+        
+        const keys = [
+            { keyCode: 'AltLeft', isTriggered: false },
+            { keyCode: 'ControlLeft', isTriggered: false },
+        ];
+
+        window.addEventListener('keydown', (e) => {
+            keys.forEach((obj) => {
+                if (obj.keyCode === e.code) {
+                    obj.isTriggered = true;
+                }
+            });
+
+            const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
+
+            if (shortcutTriggered) {
+                searchInput.focus();
+            }
+        });
+
+        window.addEventListener('keyup', (e) => {
+            keys.forEach((obj) => {
+                if (obj.keyCode === e.code) {
+                    obj.isTriggered = false;
+                }
+            });
+        });
+
+    </script>
+    <script>
+        function myFunc() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            
+
+            myFuncB("myList",filter);
+
+
+        }
+
+
+        function myFuncB(ulID,filter){
+            ul = document.getElementById( ulID);
+            console.log(ulID, ul);
+            li = ul.getElementsByTagName('li');
+            for (i = 0; i < li.length; i++) {
+                txtValue = li[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        function myFuncR(ulID,filter){
+            ul = document.getElementById( ulID);
+            console.log(ulID, ul);
+            tr = ul.getElementsByTagName('tr');
+            for (i = 1; i < tr.length; i++) {
+                txtValue = tr[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+
+    </script>
+
+
+
+<script type="text/javascript">
+var sc_project=12531493;var sc_invisible=1;var sc_security="9581419f";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript>
+<div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12531493/0/9581419f/1/"
+alt="Web Analytics"></a></div>
+</noscript>
+</body>
+</html>
+
+
+
+
+

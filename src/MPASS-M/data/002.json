@@ -1,0 +1,10 @@
+{
+    "Recipients": [
+        "+123333"
+
+    ],
+    "OriginSystem": "Marketing",
+    "Message": "123 ",
+    "MessageType": "sms",
+    "CreateBy": "Super"
+}

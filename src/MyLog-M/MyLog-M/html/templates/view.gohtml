@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>myLog | Log History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="max-age=300">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">    
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+    
+    
+    
+    
+    <style type="text/css">
+ 
+.flexbox {
+  display: flex;
+  width: 100%;
+ margin: 2px 2px 2px 2px;
+}
+
+.spacer2 {
+  flex-grow: 0.07;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+    </style>
+
+
+	
+</head>
+<body>
+
+
+<iframe width="1" height="1" src="/inc/menu.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+
+
+    <div class="container-fluid">
+
+
+
+
+    
+    
+	<h5 style="color:Black;">Logs:</h5>
+    <div class="container-fluid p-3 my-3" >
+        <div class="input-group mb-3" style="width: 75%">
+            <input class="form-control" type="search" placeholder="Enter a phrase or keyword..." aria-label="Filter" id="search-input" onkeyup="myFunc()" autofocus>
+             <div class="input-group-btn">
+                <button class="btn btn-outline-secondary" type="button" style="visibility: hidden;">Filter</button>
+            </div>
+        </div>
+
+        <h6><span class="badge bg-dark">Records: {{.RowCount}}</span></h6>
+
+        <ul id="myList" name="newslist" class="list-group list-group-flush no-bullets" >
+            {{range .Records }}
+            	<!-- Item Start -->
+                <li>
+
+<span style="margin-right:20px;">      
+                    {{.LocalTime}}
+</span>                                     
+<span style="color:Yellow; background-color:Black; margin-right:40px;">                    
+                    {{.LogType}}
+</span>                 
+   
+             <span style="font-weight:bold">       {{.LogText}}</span>
+
+                </li>
+                <!-- Item End -->
+            {{end}}
+        </ul>
+
+		
+<br><br>		
+    </div>
+														
+   </div>
+
+
+
+    
+
+
+
+
+    <script type="text/javascript">
+        const searchButton = document.getElementById('search-button');
+        const searchInput = document.getElementById('search-input');
+        searchButton.addEventListener('click', () => {
+            const inputValue = searchInput.value;
+            alert(inputValue);
+        });
+
+
+        
+        const keys = [
+            { keyCode: 'AltLeft', isTriggered: false },
+            { keyCode: 'ControlLeft', isTriggered: false },
+        ];
+
+        window.addEventListener('keydown', (e) => {
+            keys.forEach((obj) => {
+                if (obj.keyCode === e.code) {
+                    obj.isTriggered = true;
+                }
+            });
+
+            const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
+
+            if (shortcutTriggered) {
+                searchInput.focus();
+            }
+        });
+
+        window.addEventListener('keyup', (e) => {
+            keys.forEach((obj) => {
+                if (obj.keyCode === e.code) {
+                    obj.isTriggered = false;
+                }
+            });
+        });
+
+    </script>
+    <script>
+        function myFunc() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            
+
+            myFuncB("myList",filter);
+
+
+        }
+
+
+        function myFuncB(ulID,filter){
+            ul = document.getElementById( ulID);
+            console.log(ulID, ul);
+            li = ul.getElementsByTagName('li');
+            for (i = 0; i < li.length; i++) {
+                txtValue = li[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+
+<script type="text/javascript">
+var sc_project=12531493;var sc_invisible=1;var sc_security="9581419f";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript>
+<div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12531493/0/9581419f/1/"
+alt="Web Analytics"></a></div>
+</noscript>
+</body>
+</html>
+
+
+
+
+

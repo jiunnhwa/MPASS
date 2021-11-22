@@ -1,0 +1,12 @@
+{
+    "Recipients": [
+        "123",
+        "456",
+        "789"
+    ],
+    "OriginSystem": "EC",
+    "Message": "Hi {{.Name}}, your order {{.OrderID}} has been scheduled to arrive at {{.DeliverAddr}} \n Track:{{.TrackingURL}}",
+    "MessageType": "sms",
+    "CreateTime": "2021-07-10T21:27:29.7672015+08:00",
+    "CreateBy": "Super"
+}

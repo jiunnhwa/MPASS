@@ -1,0 +1,12 @@
+{
+    "Recipients": [
+        "+6598219019"
+       
+
+    ],
+    "From":"EC-MM",
+    "OriginSystem": "EC",
+    "Message": "[Lazyla] Hi {{.Name}}, Your 5% discount is expiring soon. Shop now at https://lazyla.us/promo1",
+    "MessageType": "mm/sms",
+    "CreateBy": "User1"
+}

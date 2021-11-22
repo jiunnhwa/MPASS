@@ -1,0 +1,45 @@
+
+USE `pegasus`;
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE `message` (
+  RID int NOT NULL AUTO_INCREMENT,
+
+  `Type` varchar(100), # sms,email
+  Providers varchar(255), # ordered preferences of twilio,starhub
+  
+  `From` varchar(100) NOT NULL DEFAULT '',
+  `To` varchar(100) NOT NULL DEFAULT '',
+  `Body` text,    
+  
+
+  # timestamp track changes https://stackoverflow.com/questions/409286/should-i-use-the-datetime-or-timestamp-data-type-in-mysql
+  CreateTime datetime,
+  CreateBy varchar(100) ,
+  
+  OriginSystem varchar(100) ,
+  
+  SendTime datetime, #time to send
+
+  WorkerName varchar(100),
+  StartTime datetime, #actual send time
+  EndTime datetime, 	#done time
+  
+  Status varchar(100),  #new,approved,validated,queued,locked,finished
+  Result json, 
+  
+
+  PRIMARY KEY (`RID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `pegasus`;
+DROP TABLE IF EXISTS `DNC`;
+CREATE TABLE `DNC` (
+
+  RID varchar(50), # phone, email
+  ReasonCode varchar(100) ,
+  ExpireTime datetime,
+ 
+
+  PRIMARY KEY (`RID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
