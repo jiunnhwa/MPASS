@@ -14,3 +14,17 @@ The 2 reports covers the technical aspect of the SDLC, as well as some subjectiv
 - Report MPASS_M
 - Report_MyLog-M
 - Source code folder
+
+
+## Sample: OTP Creation and Sending. ##
+![Send OTP](https://github.com/jiunnhwa/MPASS/blob/main/20210722%20OTP.gif?raw=true "Send OTP")
+
+## Sample: OTP Message Received. ##
+![Send OTP](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210722-171245_Messages.jpg?raw=true "Send OTP")
+
+## Sample: Delivery Notification Received. ##
+![Send OUN](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-174834_Messages.jpg?raw=true "Send OUN")
+
+## Sample: Marketing Message Received. ##
+![Send MM](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-190258_Messages.jpg?raw=true "Send MM")
+
