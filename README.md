@@ -11,20 +11,26 @@ The 2 reports covers the technical aspect of the SDLC, as well as some subjectiv
 ## Contents: ##
 - Client Brief - Messaging Platform
 - MPASS PRESENTATION - FINAL
-- Report MPASS_M
+- Report MPASS_M 
 - Report_MyLog-M
 - Source code folder
+
+## Requirements Matrix mapping to Project Plan. ##
+[Full report including project plan and SDLC](https://github.com/jiunnhwa/MPASS/blob/main/Report%20MPASS_M.pdf)
+
+![RM-PP](https://github.com/jiunnhwa/MPASS/blob/main/RM-PP.PNG?raw=true "RM-PP")
 
 
 ## Sample: OTP Creation and Sending. ##
 ![Send OTP](https://github.com/jiunnhwa/MPASS/blob/main/20210722%20OTP.gif?raw=true "Send OTP")
 
 ## Sample: OTP Message Received. ##
-![Send OTP](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210722-171245_Messages.jpg?raw=true "Send OTP")
+<img src="https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210722-171245_Messages.jpg" width=20% >
 
 ## Sample: Delivery Notification Received. ##
-![Send OUN](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-174834_Messages.jpg?raw=true "Send OUN")
+<img src="https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-174834_Messages.jpg" width=20% >
 
 ## Sample: Marketing Message Received. ##
-![Send MM](https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-190258_Messages.jpg?raw=true "Send MM")
+<img src="https://github.com/jiunnhwa/MPASS/blob/main/Screenshot_20210919-190258_Messages.jpg" width=20% >
+
 
